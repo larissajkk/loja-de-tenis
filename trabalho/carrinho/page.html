@@ -3,9 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
     <title>carrinho</title>
 </head>
 <body>
-    <p>carrinho</p>
-</body>
-</html>
+
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+        <label onclick="window.location.href='../menu/page.html'" class="btn btn-outline-dark" for="btnradio1">MENU</label>
+      
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label onclick="window.location.href='../produtos/page.html'" class="btn btn-outline-dark" for="btnradio2">PRODUTOS</label>
+      
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+        <label onclick="window.location.href='../carrinho/page.html'" class="btn btn-outline-dark" for="btnradio3">CARRINHO</label>
+      </div>
+
+    <div class="wrap-menu">
+        <div>
+            <img class="logo"
+            alt="logo"
+            src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/143837349/original/3795d6ff42d4145a2b8a25cd3c15485fc0bdaa9a/create-an-awesome-unique-graffiti.jpg">
+            <h1>CARRINHO</h1>
+        </div>
+    </div>   
+
+        <div id="error" class="error-modal1">
+            <p>Insira um nome para começar</p>
+            <button class="error-btn" onclick="fechar()">Entendi!</button>
+        </div>
+
+      <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <button onclick="comecar()" type="button" class="btn btn-outline-dark">Começar</button>
+        <div id="selects-div">
+          <h2>Olá<span id="nomePrint"></span>, vamos começar seu pedido!</h2>
+          <h3>NIKE</h3>
+          <select class="form-select" aria-label="Default select example" id="selectnike">
+          <option selected>Selecione seu tênis</option>
+          <option value="airforce">AIR FORCE 1</option>
+          <option value="airmax">AIR MAX</option>
+          <option value="dunklow">DUNK LOW</option>
+          <option value="sb">SB</option>
+          <option value="jordanlow">AIR JORDAN 1 LOW</option>
+          </select> 
+          <h3>ADIDAS</h3>
+          <select class="form-select" aria-label="Default select example" id="selecadidas">
+          <option selected>Selecione seu tênis</option>
+          <option value="forumbonega">FORUM BONEGA</option>
+          <option value="superstar">SUPERSTAR</option>
+          <option value="adi">ADI2000</option>
+          <option value="gazelle">GAZELLE</option>
+          <option value="rivalry">RIVALRY LOW</option>
+          </select>  
+          <h3>OUS</h3>
+          <select class="form-select" aria-label="Default select example" id="selectous">
+          <option selected>Selecione seu tênis</option>
+          <option value="bcofurtacor">2K BCO FURTACOR</option>
+          <option value="pbimperial">SOUZA PB IMPERIAL</option>
+          <option value="emergente">EMERGENTE PRT BCO</option>
+          <option value="imigrantepb">IMIGRANTE PB REFLECT</option>
+          <option value="ueno">UENO BCO</option>
+          </select>
+          <h3>ALL STAR</h3>
+          <select class="form-select" aria-label="Default select example" id="selectallstar">
+          <option selected>Selecione seu tênis</option>
+          <option value="commedes">COMME DES GARÇONS</option>
+          <option value="sparkleparty">SPARKLE PARTY</option>
+          <option value="chucktaylor">CHUCK TAYLOR</option>
+          <option value="chuckcouro">CHUCK TAYLOR COURO</option>
+          <option value="chucksparkle">CHUCK TAYLOR SPARKLE PARTY</option>
+          </select>
+          <h3>VANS</h3>
+          <select class="form-select" aria-label="Default select example" id="selectvans">
+          <option selected>Selecione seu tênis</option>
+          <option value="knu">KNU PRETO BRANCO VERDADEIRO</option>
+          <option value="sk8">SK8-HI</option>
+          <option value="slipon">SLIP-ON CHECKERBOARD DUSTY</option>
+          <option value="skoolprimary">OLD SKOOL PRIMARY CHECKERBOARD</option>
+          <option value="eratrue">ERA TRUE</option>
+          </select>
+          <div>
+              <button type="button" onclick="calcularTotal()" class="btn btn-success">Fazer pedido</button>
+              <button type="button" onclick="limpar()" class="btn btn-outline-secundary">limpar</button>
+          </div>  
+          <div>
+              <span class="badge rounded-pill bg-dark">Total</span>
+              <span class="badge rounded-pill bg-danger" id="resultado"></span>
+          </div> 
+          <div class="pedido-pronto" id="pedido-pronto">
+              <h4>NIKE</h4>
+              <p id="nike-pronto"></p>
+              <h4>ADIDAS</h4>
+              <p id="adidas-pronto"></p>
+              <h4>OUS</h4>
+              <p id="ous-pronto"></p>
+              <h4>ALL STAR</h4>
+              <p id="allstar-pronto"></p>
+              <h4>VANS</h4>
+              <p id="vans-pronto"></p>
+          </div>    
+      </div>
+  </body>
+  </html>
