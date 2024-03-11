@@ -11,6 +11,16 @@ body{
     gap: 2vh;
     padding: 20px;
     overflow-x: hidden;
+    background-image: url("https://i.pinimg.com/564x/49/f2/88/49f2884169e66f805c1fbb34a25a8ce2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo{
+    width: 100px;
+    height: auto;
+    border-radius: 100%;
+    margin-bottom: 4vh;
 }
 
 .wrap-cards{
@@ -18,11 +28,18 @@ body{
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 2vh;
+    gap: 3vh;
 }
 h2{
+    font-family: "Permanent Marker", cursive;
     width: 100%;
     text-align: center;
+    color: white;
+}
+
+h1{
+    font-family: "Permanent Marker", cursive;
+    color: white;
 }
 
 .card-img-top{
@@ -30,11 +47,18 @@ h2{
     height: 200px !important;
 }
 
-/* @media (width >= 1024px){
-    .wrap-cards{
-        gap: 2vw;
-    }
-} */
+.wrap-menu{
+    font-family: "Permanent Marker", cursive;
+    margin-right: 85%;
+}
 
+label{
+    font-family: "Permanent Marker", cursive;
+    color: white;
+}
 
+button{
+    font-family: "Permanent Marker", cursive;
+    color: white;
+}
    
